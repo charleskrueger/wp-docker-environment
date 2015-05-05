@@ -1,12 +1,31 @@
 <?php
 
-/**
- * @see https://github.com/markjaquith/WordPress-Skeleton [description]
- */
+// if ($_SERVER['REMOTE_ADDR']=='127.0.0.1') {
+//     define('WP_ENV', 'development');
+// } else {
+//     define('WP_ENV', 'production');
+// }
+
+// // MySQL settings - You can get this info from your web host //
+// if (WP_ENV == 'development') {
+//     define('DB_NAME', 'mydb-dev');
+//     define('DB_USER', 'root');
+//     define('DB_PASSWORD', '');
+//     define('DB_HOST', 'localhost');
+// } else {
+//     define('DB_NAME', 'mydb-prod');
+//     define('DB_USER', 'username');
+//     define('DB_PASSWORD', 'pasdword');
+//     define('DB_HOST', 'mysql.mysite.com');
+// } 
+
 
 // ===================================================
 // Load database info and local development parameters
 // ===================================================
+/**
+ * @see https://github.com/markjaquith/WordPress-Skeleton [description]
+ */
 if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
   define( 'WP_LOCAL_DEV', true );
   include( dirname( __FILE__ ) . '/local-config.php' );
@@ -18,17 +37,20 @@ if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
   define( 'DB_HOST', '%%DB_HOST%%' ); // Probably 'localhost'
 }
 
+
 // ========================
-// Custom Content Directory
+// Custom Content Directory (defined at file end)
 // ========================
-define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/content' );
-define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/content' );
+// define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
+// define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content' );
+
 
 // ================================================
 // You almost certainly do not want to change these
 // ================================================
 define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
+
 
 // ==============================================================
 // Salts, for security
@@ -83,6 +105,17 @@ define( 'STAGING_DOMAIN', '%%WP_STAGING_DOMAIN%%' ); // Does magic in WP Stack t
 // ===================
 // Bootstrap WordPress
 // ===================
-if ( !defined( 'ABSPATH' ) )
-  define( 'ABSPATH', dirname( __FILE__ ) . '/wp/' );
+
+if ( !defined('ABSPATH') )
+  define('ABSPATH', dirname(__FILE__) . '/wordpress/');
+
+/**
+ * @see http://ajk.fi/2013/wordpress-as-a-submodule/ info on pointing WP paths to 
+ */
+define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST']);
+define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/wordpress');
+define('WP_CONTENT_DIR', realpath(ABSPATH . '../wp-content/'));
+define('WP_CONTENT_URL', WP_HOME . '/wp-content');
+define('UPLOADS', '../uploads');
+
 require_once( ABSPATH . 'wp-settings.php' );
