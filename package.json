@@ -1,7 +1,7 @@
 {
   "name": "DisabilityScoop",
   "version": "0.0.0",
-  "description": "The DisabilityScoop website",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,9 +17,7 @@
   },
   "homepage": "https://github.com/schemadesign/DisabilityScoop",
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-exec": "^0.4.6",
-    "grunt-peach": "^0.1.0",
-    "grunt-ssh": "^0.12.3"
+    "yo": "^1.4.6",
+    "generator-wordpress": "^2.0.0"
   }
 }

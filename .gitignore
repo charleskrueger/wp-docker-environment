@@ -1,3 +1,39 @@
-# add content
+# ignore YeoPress configuration file since it contains password information
+.yeopress
+
+# As Yeoman assumes the usage of Bower and Grunt, ignore the below:
+bower_components
 node_modules
-wordpress
+
+# Ignore automatically generated cruft
+*.log
+.sass-cache
+
+# Ignore config
+local-config.php
+
+
+# Operating system files
+.Spotlight-V100
+.Trashes
+.DS_Store
+.DS_Store?
+ehthumbs.db
+Thumbs.db
+
+# Vagrant
+.vagrant
+
+# WordPress + popular plugin generated — adapted from:
+# https://github.com/github/gitignore/blob/master/WordPress.gitignore
+sitemap.xml
+sitemap.xml.gz
+src/content/advanced-cache.php
+src/content/backup-db/
+src/content/backups/
+src/content/blogs.dir/
+src/content/cache/
+src/content/uploads/
+src/content/upgrade/
+src/content/wp-cache-config.php
+
