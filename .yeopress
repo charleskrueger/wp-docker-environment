@@ -1,0 +1,21 @@
+{
+  "wpVer": "4.2.2",
+  "url": "http://local.disabilityscoop.com",
+  "tablePrefix": "wp_",
+  "dbHost": "localhost",
+  "dbName": "ds_wordpress",
+  "dbUser": "ds_wordpress",
+  "dbPass": "ds1234",
+  "git": true,
+  "submodule": true,
+  "wpDir": "wordpress",
+  "contentDir": "content",
+  "installTheme": true,
+  "customDirs": true,
+  "themeDir": "yeopress",
+  "themeType": "git",
+  "themeTaskRunner": "grunt",
+  "themeUser": "charleskrueger",
+  "themeRepo": "yeopress-base-theme",
+  "themeBranch": "master"
+}
