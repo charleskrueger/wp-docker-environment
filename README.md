@@ -1,3 +1,0 @@
-# DisabilityScoop
-
-The DisabilityScoop website
