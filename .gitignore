@@ -12,6 +12,9 @@ node_modules
 # Ignore config
 src/webapp/local-config.php
 
+# Database creds
+secrets.env
+
 
 # Operating system files
 .Spotlight-V100
