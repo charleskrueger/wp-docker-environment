@@ -1,0 +1,15 @@
+{
+  "name": "DisabilityScoop",
+  "version": "0.0.0",
+  "description": "Disability Scoop website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "yo": "^1.4.6",
+    "generator-wordpress": "^2.0.1"
+  }
+}
