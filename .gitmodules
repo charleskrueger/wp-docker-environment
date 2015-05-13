@@ -1,0 +1,6 @@
+[submodule "wordpress"]
+  path = src/webapp/wordpress
+  url = git://github.com/WordPress/WordPress.git
+[submodule "disabilityscoop-theme"]
+  path = src/webapp/content/themes/disabilityscoop
+  url = git://github.com/charleskrueger/yeopress-base-theme.git
