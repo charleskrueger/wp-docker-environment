@@ -1,16 +1,18 @@
 require.config({
-	baseUrl: "content/themes/yeopress/js",
+	baseUrl: "content/themes/disabilityscoop/js",
 	paths: {
-    jquery: "vendor/jquery/jquery",
+		jquery: "vendor/jquery/jquery",
 		underscore: "vendor/underscore/underscore",
-    datgui: "vendor/dat.gui/dat.gui",
-    utils: "vendor/fiveleft/core/Utils",
-    tweenmax: "vendor/gsap/src/minified/TweenMax.min",
-    handlebars: "vendor/handlebars/handlebars",
+		datgui: "vendor/dat.gui/dat.gui",
+		utils: "vendor/fiveleft/core/Utils",
+		tweenmax: "vendor/gsap/src/minified/TweenMax.min",
+		handlebars: "vendor/handlebars/handlebars",
 		app: "app/Application",
-    templates: "app/templates"
+		templates: "app/templates"
 	},
-  shim: {}
+	shim: {
+
+	}
 });
 
 require(
