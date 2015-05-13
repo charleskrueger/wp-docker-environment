@@ -1,0 +1,182 @@
+
+.tile-list {
+  // border-left: 1px dotted #333;
+  // border-right: 1px dotted #333;
+}
+
+.tile {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0 10px 10px;
+
+
+  .tile-content {
+    position: relative;
+    border: 1px dotted #ccc;
+    background: #FFF;
+    padding: 15px;
+    overflow: hidden;
+    @include box-shadow( 0px 2px 10px 0px rgba(0,0,0,0.2) );
+  }
+
+  .title {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 0 0 0.5em;
+    line-height: 1.125em;
+  }
+  .category-info, .time-marker, .tile-layout-info {
+    font-size: 10px;
+    line-height: 1;
+  }
+  .category-info,
+  .time-marker {
+    font-weight: bold;
+  }
+  .category-info {
+    color: #00CCFF;
+    padding: 0 0 10px;
+  }
+  .time-marker {
+    color: #333;
+    padding: 10px 0 0;
+  }
+  .tile-layout-info {
+    position: absolute;
+    right: 0; bottom: 0;
+    padding: 5px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #333;
+    background: rgba(#CCC, 0.58);
+    line-height: 1;
+  }
+
+  &.priority-0 .tile-layout-info {
+    background: rgba(#FFFF00, 0.8);
+    color: #000;
+  }
+  &.priority-1 .tile-layout-info {
+    background: rgba(#FF0080, 0.8);
+    color: #000;
+  }
+  &.priority-2 .tile-layout-info {
+    background: rgba(#00CCFF, 0.8);
+    color: #FFF;
+  }
+  &.priority-3 .tile-layout-info {
+    background: rgba(#666666, 0.8);
+    color: #FFF;
+  }
+
+  &.priority-0 {
+    font-size: 1.5em;
+    .tile-content {
+      background: #00CCFF;
+      color: #FFF;
+    }
+    .category-info {
+      color: #FFF;
+    }
+  }
+  &.priority-1, 
+  &.priority-2 {
+    .featured-image {
+      position: relative;
+      background: #333;
+      width: 100%;
+      height: 0;
+      padding: 0 0 56.26%;
+      margin: 0 0 10px;
+    }
+  }
+}
+
+
+
+
+/* 320px to 479px */
+@media only screen and (min-width: 320px) {}
+
+
+/* 480px to 639px */
+@media only screen and (min-width: 480px) {}
+
+
+/* 640px to 767px */
+@media only screen and (min-width: 640px) {
+
+  .tile-list {
+    position: relative;
+    margin: -15px;
+    @include pie-clearfix;
+  }
+
+  .tile {
+    position: relative;
+    float: left;
+    width: 50%;
+    padding: 15px;
+
+    .tile-inner {
+      position: relative;
+      height: 0;
+      padding: 0 0 300px;
+    }
+    .tile-content {
+      position: absolute;
+      width: 100%; 
+      height: 100%;
+      border: 1px dotted #ccc;
+      background: #FFF;
+      padding: 15px;
+      overflow: hidden;
+      @include box-shadow( 0px 2px 10px 0px rgba(0,0,0,0.2) );
+    }
+    &.priority-0 {
+      width: 100%;
+      .tile-content {
+        background: #00CCFF;
+        color: #FFF;
+      }
+    }
+  }
+}
+
+/* 768px to 1024px */
+@media only screen and (min-width: 768px) {
+  .tile {
+    width: 1/3 * 100%;
+    .tile-inner {
+      padding: 0 0 400px;
+    }
+    &.priority-1 {
+      font-size: 1.125em;
+      width: 2/3 * 100%; 
+    }
+    &.priority-3 {
+      font-size: 0.875em;
+    }
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .tile.priority-1 + .tile:not(.priority-0) {
+    width: 1/3 * 100%;
+  }
+}
+
+/* 1024px to 1280 */
+@media only screen and (min-width: 1024px) {
+  .tile {
+    width: 1/4 * 100%;
+  }
+  .tile.priority-1 {
+    width: 1/2 * 100%; 
+  }
+}
+
+/* More than 1280 */
+@media only screen and (min-width: 1280px) {
+
+}
