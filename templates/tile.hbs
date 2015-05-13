@@ -1,0 +1,27 @@
+
+<li class='tile priority-{{priority}} {{#if featuredImage}}has-image{{/if}}' data-index='{{index}}'>
+  <div class='tile-inner'>
+    <div class='tile-content'>
+      {{#if featuredImage}}
+      <div class='featured-image'>
+        <div class='image-wrapper'>
+          <span class='image-placeholder'></span>
+        </div>
+      </div>
+      {{/if}}
+      <div class='category-info'>
+        <span class='index'>{{{index}}}</span> | 
+        <span class='featured-category'>{{{featuredCategory}}}</span>
+      </div>
+      <h1 class='title'>{{title}}</h1>
+      <p class='content-wrapper'>
+        {{excerpt}}
+      </p>
+      <p class='time-marker'><span class='date'>{{displayDate}}</span> | <span class='time'>{{displayTime}}</span></p>
+      <div class='tile-layout-info'>
+        <span class='priority'>Priority: {{priority}}</span>
+        {{#if featuredImage}} | <span class='has-image'>Image</span>{{/if}}
+      </div>
+    </div>
+  </div>
+</li>
