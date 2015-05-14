@@ -1,7 +1,7 @@
+FROM ../webapp-base:latest
+
 FROM orchardup/php5
 ADD . /code
-
-# FROM leaguewinspool/webapp-base:latest
 
 # Install client-side packages
 COPY content/themes/disabilityscoop/package.json /webapp/content/themes/disabilityscoop/
@@ -15,6 +15,6 @@ RUN bower install --allow-root # --allow-root allows bower to run as sudo, which
 COPY . /webapp
 
 # Build client-side code
-RUN grunt build --force
+RUN grunt
 
-EXPOSE 3000
+# EXPOSE 3000

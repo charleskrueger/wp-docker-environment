@@ -5,8 +5,10 @@ nginx:
 
 webapp:
   build: webapp
-  expose:
-    - "3000"
+  env_file:
+    - db/secrets.env
+  ports:
+    - "8000:8000"
 
 db:
   build: db

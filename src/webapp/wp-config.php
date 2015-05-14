@@ -19,19 +19,28 @@ if (file_exists(dirname(__FILE__) . '/local-config.php')) {
 	include(dirname(__FILE__) . '/local-config.php');
 }
 
-// Global DB config
-if (!defined('DB_NAME')) {
-	define('DB_NAME', 'ds_wordpress');
-}
-if (!defined('DB_USER')) {
-	define('DB_USER', 'ds_wordpress');
-}
-if (!defined('DB_PASSWORD')) {
-	define('DB_PASSWORD', 'ds1234');
-}
-if (!defined('DB_HOST')) {
-	define('DB_HOST', 'localhost');
-}
+/** The name of the database for WordPress */
+define('DB_NAME', getenv('DB_NAME'));
+/** MySQL database username */
+define('DB_USER', getenv('DB_USER'));
+/** MySQL database password */
+define('DB_PASSWORD', getenv('DB_PASS'));
+/** MySQL hostname */
+define('DB_HOST', getenv('DB_HOST').":".getenv('DB_PORT'));
+
+// // Global DB config
+// if (!defined('DB_NAME')) {
+// 	define('DB_NAME', 'ds_wordpress');
+// }
+// if (!defined('DB_USER')) {
+// 	define('DB_USER', 'ds_wordpress');
+// }
+// if (!defined('DB_PASSWORD')) {
+// 	define('DB_PASSWORD', 'ds1234');
+// }
+// if (!defined('DB_HOST')) {
+// 	define('DB_HOST', 'localhost');
+// }
 
 /** Database Charset to use in creating database tables. */
 if (!defined('DB_CHARSET')) {
