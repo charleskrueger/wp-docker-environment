@@ -1,51 +1,14 @@
-# nginx:
-#   extends:
-#     file: docker-common.yml
-#     service: nginx
-#   links:
-#     - webapp
-
-# webapp:
-#   extends:
-#     file: docker-common.yml
-#     service: webapp
-#   links:
-#     - db
-#   volumes:
-#     - webapp:/webapp
-#   #command: npm test
-
-# db:
-#   extends:
-#     file: docker-common.yml
-#     service: db
-#   volumes_from:
-#     - dbdata
-
-# dbdata:
-#   extends:
-#     file: docker-common.yml
-#     service: dbdata
-#     
-
-
-nginx:
-  build: nginx
-  ports:
-    - "80:80"
-  links:
-    - webapp
-
 webapp:
   build: webapp
   env_file:
     - db/secrets.env
   ports:
-    - "8000:8000"
+    - "80:80"
   links:
     - db
   volumes:
     - webapp:/webapp
+    - log:/var/log
 
 db:
   build: db
@@ -56,4 +19,3 @@ db:
 
 dbdata:
   build: dbdata
-

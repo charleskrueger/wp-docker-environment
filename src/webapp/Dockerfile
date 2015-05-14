@@ -35,10 +35,14 @@ RUN bower install --allow-root # --allow-root allows bower to run as sudo, which
 # Everything above this line should be cached in most cases
 COPY . /webapp
 
-# 
-EXPOSE 8000
+
+EXPOSE 80
+
+
+VOLUME /var/log
+
 
 # Run the PHP Server
-CMD php -S 0.0.0.0:8000 -t /webapp 
+CMD php -S 0.0.0.0:80 -t /webapp 
 
 

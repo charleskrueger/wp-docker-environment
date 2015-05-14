@@ -20,13 +20,13 @@ if (file_exists(dirname(__FILE__) . '/local-config.php')) {
 }
 
 /** The name of the database for WordPress */
-define('DB_NAME', getenv('DB_NAME'));
+define('DB_NAME', getenv('MYSQL_DATABASE'));
 /** MySQL database username */
-define('DB_USER', getenv('DB_USER'));
+define('DB_USER', getenv('MYSQL_USER'));
 /** MySQL database password */
-define('DB_PASSWORD', getenv('DB_PASS'));
+define('DB_PASSWORD', getenv('MYSQL_PASSWORD'));
 /** MySQL hostname */
-define('DB_HOST', getenv('DB_HOST').":".getenv('DB_PORT'));
+define('DB_HOST', 'db' );
 
 // // Global DB config
 // if (!defined('DB_NAME')) {
@@ -124,8 +124,9 @@ if (!defined('WP_DEBUG')) {
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
-if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+if (!defined('ABSPATH')) {
+	define('ABSPATH', dirname(__FILE__) . '/wordpress/');
+}
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
