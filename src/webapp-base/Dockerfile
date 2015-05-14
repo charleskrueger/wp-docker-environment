@@ -7,11 +7,6 @@ RUN apt-get update && apt-get install -y \
     build-essential=11.7 \
     git=1:2.1.4-2.1 \
     ruby-full=1:2.1.5
-#    chrpath=0.16-1 \
-#    libssl-dev=1.0.1k-3 \
-#    libxft-dev=2.3.2-1 \
-#    libfreetype6-dev=2.5.2-3 \
-#    libfontconfig1-dev=2.11.0-6.3
 
 # Install compass
 RUN gem install compass -v 1.0.3 --no-document
@@ -20,14 +15,9 @@ RUN gem install compass -v 1.0.3 --no-document
 RUN npm install -g \
     bower \
     grunt-cli
-#    generator-angular@0.11.1 \
-#    nodemon@1.3.7 \
-#    phantomjs@1.9.7-14 \
-#    pm2@0.12.13 \
-#    yo@1.4.6
 
 # Adjust permissions so we can run yo within Docker container (https://github.com/yeoman/yeoman.io/issues/282)
-RUN mkdir /root/.config
-RUN mkdir /root/.config/configstore
-RUN chmod g+rwx /root /root/.config /root/.config/configstore
+# RUN mkdir /root/.config
+# RUN mkdir /root/.config/configstore
+# RUN chmod g+rwx /root /root/.config /root/.config/configstore
 

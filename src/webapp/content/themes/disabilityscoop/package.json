@@ -1,17 +1,17 @@
 {
-  "name": "YeoPress-Template",
+  "name": "disabilityscoop-theme",
   "version": "0.0.2",
-  "description": "A basic template for use in YeoPress",
+  "description": "Disability Scoop Template for wordpress",
   "scripts": {
     "test": ""
   },
   "keywords": [
-    "Yeoman",
+    "Disability Scoop",
     "Wordpress",
     "YeoPress",
     "Template"
   ],
-  "author": "Wes Todd",
+  "author": "Charles Krueger",
   "license": "BSD",
   "devDependencies": {
     "grunt": "~0.4.1",
