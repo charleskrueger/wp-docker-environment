@@ -39,6 +39,6 @@ COPY . /webapp
 EXPOSE 8000
 
 # Run the PHP Server
-CMD php -S 0.0.0.0:8000 -t /code 
+CMD php -S 0.0.0.0:8000 -t /webapp 
 
 
