@@ -1,8 +1,8 @@
 # FROM webapp-base
 
 # Add PHP
-FROM orchardup/php5
-ADD . /code
+# FROM orchardup/php5
+# ADD . /code
 
 # Add Node
 FROM node:0.12.2-slim
@@ -10,6 +10,8 @@ FROM node:0.12.2-slim
 # Install dependencies
 RUN apt-get update && apt-get install -y \
     build-essential=11.7 \
+    php5 \
+    php5-mysql \
     git=1:2.1.4-2.1 \
     ruby-full=1:2.1.5
 
@@ -33,7 +35,10 @@ RUN bower install --allow-root # --allow-root allows bower to run as sudo, which
 # Everything above this line should be cached in most cases
 COPY . /webapp
 
-# Build client-side code
-RUN grunt
-
+# 
 EXPOSE 8000
+
+# Run the PHP Server
+CMD php -S 0.0.0.0:8000 -t /code 
+
+
