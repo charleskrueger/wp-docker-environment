@@ -1,0 +1,2 @@
+#!/bin/sh
+sudo docker run -d -v /data:/data tutum/mysql /bin/bash -c "/import_sql.sh $MYSQL_USER $MYSQL_PASSWORD /data/wordpress_database.sql"

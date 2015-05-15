@@ -15,6 +15,9 @@ src/webapp/local-config.php
 # Database creds
 secrets.env
 
+# Ignore any data files
+data/**/*.sql
+
 
 # Operating system files
 .Spotlight-V100
@@ -36,6 +39,7 @@ src/webapp/content/backup-db/
 src/webapp/content/backups/
 src/webapp/content/blogs.dir/
 src/webapp/content/cache/
+src/webapp/content/plugins/
 src/webapp/content/uploads/
 src/webapp/content/upgrade/
 src/webapp/content/wp-cache-config.php
